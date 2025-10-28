@@ -1,15 +1,17 @@
 #include <iostream>
 #include <string>
+#include <cctype>
 
 using namespace std;
 
-void minuscula(string &palabra){
+string minus(string &texto){
 	
-	for(char &c : palabra){
-		c = tolower(c);
+	for(char &c : texto){
+	  c = tolower(c);
 	}
-	
+	return texto;
 }
+
 
 bool Palidromo(string palabra){
 	string palabravolteada = "";
@@ -31,9 +33,9 @@ int main(){
 	string palabra;
 	
 	cout << "Ingrese la palabra que desee: " <<endl;
-	cin >> palabra ;
+	getline(cin, palabra);
 	
-	minuscula(palabra);
+	minus(palabra);
 	
 	if(!Palidromo(palabra)){
 		cout << "\n =====NO ES PALIDROMO =====" << endl;
@@ -42,6 +44,5 @@ int main(){
 		
 		cout << "\n ===== SI ES PALIDROMO ====" << endl;
 	}
-	
-	
+
 }
